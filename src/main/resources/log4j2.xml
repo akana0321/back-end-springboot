@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Configuration>
+  <Appenders>
+    <Console name="Out" target="SYSTEM_OUT">
+      <PatternLayout pattern="%-5level: %logger{36}.%M() - %msg%n"/>
+    </Console>
+  </Appenders>
+  
+  <Loggers>
+    <Logger name="com.mycompany.backend" level="info" additivity="false">
+      <AppenderRef ref="Out"/>
+    </Logger>
+    <!-- SQL문을 로깅 -->
+    <Logger name="jdbc.sqltiming" level="info" additivity="false">
+      <AppenderRef ref="Out"/>
+    </Logger>
+    <Root level="error">
+      <AppenderRef ref="Out"/>
+    </Root>
+  </Loggers>
+</Configuration>
