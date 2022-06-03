@@ -184,6 +184,7 @@ public class MemberController {
   
   @GetMapping("/logout")
   public ResponseEntity<String> logout(@RequestHeader("Authorization") String authorization) {
+    log.info("로그아웃 실행");
     //AccessToken 얻기
     String accessToken = Jwt.getAccessToken(authorization);
     if(accessToken == null) {
